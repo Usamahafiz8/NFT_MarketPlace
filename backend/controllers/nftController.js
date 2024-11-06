@@ -23,6 +23,7 @@ exports.createNFT = async (req, res) => {
   try {
     const savedNFT = await newNFT.save();
     res.status(201).json(savedNFT);
+    console.log('NFT has been created:', savedNFT);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
